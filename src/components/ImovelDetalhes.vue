@@ -45,8 +45,8 @@
                 ><v-icon color="red">mdi-home-account</v-icon></v-list-item-icon
               >
               <v-list-item-title>
-                <contrato-form :imovel="imovel"></contrato-form
-              ></v-list-item-title>
+                <contrato-form :imovel="imovel"></contrato-form>
+              </v-list-item-title>
             </v-list-item>
           </v-list>
         </v-card-text>
@@ -55,9 +55,10 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
-            ver contratos
-          </v-btn>
+          <lista-contratos
+            :contratos="contratos"
+            :imovel="imovel"
+          ></lista-contratos>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -65,6 +66,8 @@
 </template>
 <script>
 import ContratoForm from "../components/ContratoForm.vue";
+import ListaContratos from "../components/ListaContratos.vue";
+
 import reqContratos from "../utils/axiosContratosRequestHelper";
 export default {
   data() {
@@ -75,6 +78,7 @@ export default {
   },
   components: {
     ContratoForm,
+    ListaContratos,
   },
   props: {
     imovel: {
@@ -106,15 +110,13 @@ export default {
       this.contratos.forEach((contrato) => {
         let inicio = Date.parse(contrato.inicio);
         let fim = Date.parse(contrato.fim);
+        contrato.inicio = new Date(contrato.inicio);
+        contrato.fim = new Date(contrato.fim);
 
         console.log(inicio < hoje);
         console.log(fim > hoje);
 
         if (inicio < hoje && fim > hoje) {
-          console.log("passou");
-          console.log(contrato);
-          contrato.inicio = new Date(contrato.inicio);
-          contrato.fim = new Date(contrato.fim);
           escolhido = contrato;
         }
       });
