@@ -25,4 +25,6 @@ module.exports = {
 	insert_contrato: `${URL}contratos`,
 	update_contrato: (contratoId) => `${URL}contratos/${contratoId}`,
 	delete_contrato: (contratoId) => `${URL}contratos/${contratoId}`,
+
+	get_contratos_por_imovel: (imovelId) => `${URL}contratos/imovel/${imovelId}`,
 };
