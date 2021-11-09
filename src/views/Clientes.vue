@@ -3,15 +3,9 @@
     <v-row>
       <v-col v-for="cliente in clientes" :key="cliente.id" :cols="3">
         <v-card class="mx-auto" max-width="344">
-          <v-card-text>
-            <p class="text-h4 text--primary">
-              {{ cliente.nome }}
-            </p>
-            <p>{{ cliente.cpf }}</p>
-            <div class="text--primary">
-              {{ cliente.tipo }}
-            </div>
-          </v-card-text>
+          <v-card-title> {{ cliente.nome }} </v-card-title>
+
+          <v-card-subtitle>{{ cliente.cpf }}</v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
@@ -35,16 +29,10 @@ export default {
     ClienteForm,
   },
   methods: {
-    attClientes() {
-      req
-        .get_clientes()
-        .then((clientes) => {
-          this.clientes = clientes;
-          console.log(this.clientes);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+    async attClientes() {
+      let clientes = await req.get_clientes();
+
+      this.clientes = clientes;
     },
   },
 };

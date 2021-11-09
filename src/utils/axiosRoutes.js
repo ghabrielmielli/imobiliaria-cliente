@@ -13,6 +13,8 @@ module.exports = {
 	insert_cliente: `${URL}clientes`,
 	update_cliente: (clienteId) => `${URL}clientes/${clienteId}`,
 	delete_cliente: (clienteId) => `${URL}clientes/${clienteId}`,
+	is_locador: (clienteId) => `${URL}imoveis/isLocador/${clienteId}`,
+	is_locatario: (clienteId) => `${URL}contratos/isLocatario/${clienteId}`,
 
 	//imovel
 	get_imoveis: `${URL}imoveis`,

@@ -25,4 +25,26 @@ export default {
 				});
 		});
 	},
+	get_is_locador(cliente) {
+		return new Promise((resolve, reject) => {
+			axios.get(routes.is_locador(cliente.id))
+				.then((res) => {
+					resolve(res.data);
+				})
+				.catch((err) => {
+					reject(err);
+				});
+		});
+	},
+	get_is_locatario(cliente) {
+		return new Promise((resolve, reject) => {
+			axios.get(routes.is_locatario(cliente.id))
+				.then((res) => {
+					resolve(res.data);
+				})
+				.catch((err) => {
+					reject(err);
+				});
+		});
+	},
 };
