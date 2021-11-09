@@ -56,8 +56,9 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <lista-contratos
-            :contratos="contratos"
+            :contratos="[...contratos]"
             :imovel="imovel"
+            @novoContrato="getContratos()"
           ></lista-contratos>
         </v-card-actions>
       </v-card>
