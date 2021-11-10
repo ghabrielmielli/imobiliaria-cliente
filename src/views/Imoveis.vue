@@ -6,7 +6,11 @@
           <v-card-title
             >{{ imovel.endereco.rua }}, {{ imovel.endereco.numero }}
             <v-spacer></v-spacer
-            ><imovel-detalhes :imovel="imovel"></imovel-detalhes>
+            ><imovel-detalhes
+              :imovel="imovel"
+              @editImovel="attImoveis()"
+              @deleteImovel="attImoveis()"
+            ></imovel-detalhes>
           </v-card-title>
           <v-card-subtitle
             >{{ imovel.endereco.cidade }} -

@@ -8,11 +8,23 @@
       </template>
 
       <v-card>
-        <v-card-title class="text-h5">
-          <v-icon>mdi-map-marker</v-icon> {{ imovel.endereco.rua }},
-          {{ imovel.endereco.numero }} | {{ imovel.endereco.cidade }} -
-          {{ imovel.endereco.uf }}
-        </v-card-title>
+        <v-app-bar class="text-h5">
+          <v-icon class="pr-2">mdi-map-marker</v-icon>
+          <v-toolbar-title>
+            {{ imovel.endereco.rua }}, {{ imovel.endereco.numero }} |
+            {{ imovel.endereco.cidade }} -
+            {{ imovel.endereco.uf }}
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <imovel-edit
+            :imovelId="imovel.id"
+            @editImovel="$emit('editImovel')"
+          ></imovel-edit>
+          <imovel-delete
+            :imovelId="imovel.id"
+            @deleteImovel="$emit('deleteImovel')"
+          ></imovel-delete>
+        </v-app-bar>
 
         <v-card-subtitle class="mt-2 ml-2" v-if="imovel.endereco.complemento">
           Complemento: {{ imovel.endereco.complemento }}
@@ -45,7 +57,10 @@
                 ><v-icon color="red">mdi-home-account</v-icon></v-list-item-icon
               >
               <v-list-item-title>
-                <contrato-form :imovel="imovel"></contrato-form>
+                <contrato-form
+                  :imovel="imovel"
+                  @novoContrato="getContratos()"
+                ></contrato-form>
               </v-list-item-title>
             </v-list-item>
           </v-list>
@@ -70,6 +85,8 @@ import ContratoForm from "../components/ContratoForm.vue";
 import ListaContratos from "../components/ListaContratos.vue";
 
 import reqContratos from "../utils/axiosContratosRequestHelper";
+import ImovelDelete from "./ImovelDelete.vue";
+import ImovelEdit from "./ImovelEdit.vue";
 export default {
   data() {
     return {
@@ -80,6 +97,8 @@ export default {
   components: {
     ContratoForm,
     ListaContratos,
+    ImovelEdit,
+    ImovelDelete,
   },
   props: {
     imovel: {
