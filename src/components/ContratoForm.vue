@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" persistent max-width="50%">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn v-bind="attrs" v-on="on" small depressed color="white">
+      <v-btn v-bind="attrs" v-on="on" small depressed outlined color="grey">
         novo contrato
       </v-btn>
     </template>

@@ -43,7 +43,7 @@ export default {
       { title: "Home", icon: "mdi-view-dashboard", path: "/" },
       { title: "Clientes", icon: "mdi-account", path: "/Clientes" },
       { title: "Imóveis", icon: "mdi-home", path: "/Imoveis" },
-      { title: "Contratos", icon: "mdi-help-box", path: "/Contratos" },
+      { title: "Logs", icon: "mdi-map-search-outline", path: "/Logs" },
     ],
   }),
 };

@@ -58,4 +58,15 @@ export default {
 				});
 		});
 	},
+	get_imoveis_logs() {
+		return new Promise((resolve, reject) => {
+			axios.get(routes.get_imoveis_logs)
+				.then((res) => {
+					resolve(res.data);
+				})
+				.catch((err) => {
+					reject(err);
+				});
+		});
+	},
 };

@@ -38,6 +38,12 @@
                 {{ imovel.cliente.nome }}</v-list-item-title
               >
             </v-list-item>
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-information-outline</v-icon></v-list-item-icon
+              >
+              <v-list-item-title>{{ imovel.descricao }}</v-list-item-title>
+            </v-list-item>
             <v-list-item v-if="contratoAtual">
               <v-list-item-icon
                 ><v-icon color="green"
