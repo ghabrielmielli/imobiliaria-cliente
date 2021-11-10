@@ -22,7 +22,10 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Imobiliária</v-toolbar-title>
+      <v-toolbar-title
+        >Trabalho de LBD - Aluno: Ghabriel Mielli | RGA:
+        2019.1906.021-9</v-toolbar-title
+      >
     </v-app-bar>
 
     <v-main>
