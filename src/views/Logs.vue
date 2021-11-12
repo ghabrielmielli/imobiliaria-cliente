@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
+  <v-container fluid color="card">
     <v-data-table
       :headers="headers"
       :items="logs"
       :items-per-page="10"
-      class="elevation-1"
+      class="elevation-1 card"
     ></v-data-table>
   </v-container>
 </template>

@@ -2,7 +2,7 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="50%">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="blue" icon v-bind="attrs" v-on="on">
+        <v-btn color="secondary" icon v-bind="attrs" v-on="on">
           <v-icon>mdi-dots-vertical</v-icon>
         </v-btn>
       </template>

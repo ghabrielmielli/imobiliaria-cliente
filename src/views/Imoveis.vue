@@ -2,7 +2,7 @@
   <v-container class="pt-12" fluid>
     <v-row>
       <v-col v-for="imovel in imoveis" :key="imovel.id" :cols="3">
-        <v-card class="mx-auto" max-width="344">
+        <v-card class="mx-auto" max-width="344" color="card">
           <v-card-title
             >{{ imovel.endereco.rua }}, {{ imovel.endereco.numero }}
             <v-spacer></v-spacer

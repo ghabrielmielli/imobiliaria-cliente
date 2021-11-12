@@ -2,7 +2,7 @@
   <v-container class="pt-12" fluid>
     <v-row>
       <v-col v-for="cliente in clientes" :key="cliente.id" :cols="3">
-        <v-card class="mx-auto" max-width="344">
+        <v-card class="mx-auto" max-width="344" color="card">
           <v-card-title> {{ cliente.nome }} </v-card-title>
 
           <v-card-subtitle>{{ cliente.cpf }}</v-card-subtitle>

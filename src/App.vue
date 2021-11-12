@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
-      <v-list dense nav>
+    <v-navigation-drawer v-model="drawer" app color="primary">
+      <v-list dense nav dark>
         <v-list-item
           v-for="item in routes"
           :key="item.title"
@@ -19,17 +19,20 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title
-        >Trabalho de LBD - Aluno: Ghabriel Mielli | RGA:
-        2019.1906.021-9</v-toolbar-title
-      >
+      <v-toolbar-title>Trabalho de LBD - Sistema Imobiliário</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon @click="toggleDarkMode()">
+        <v-icon>mdi-theme-light-dark</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-main>
-      <router-view />
+      <v-sheet color="secondary" height="100%" dark class="pa-0">
+        <router-view />
+      </v-sheet>
     </v-main>
   </v-app>
 </template>
@@ -46,5 +49,12 @@ export default {
       { title: "Logs", icon: "mdi-map-search-outline", path: "/Logs" },
     ],
   }),
+  methods: {
+    toggleDarkMode() {
+      this.$vuetify.theme.dark = localStorage.darkMode = !(
+        localStorage.darkMode == "true"
+      );
+    },
+  },
 };
 </script>

@@ -1,21 +1,21 @@
 <template>
   <v-carousel
     cycle
-    height="100%"
-    hide-delimiter-background
+    height="101%"
     show-arrows-on-hover
+    hide-delimiter-background
   >
     <v-carousel-item>
-      <v-sheet color="indigo" height="100%" dark>
+      <v-sheet color="accent" height="100%" dark>
         <v-row class="fill-height" align="center" justify="center">
           <div class="text-h2">Sistema Imobiliário</div>
         </v-row>
       </v-sheet>
     </v-carousel-item>
     <v-carousel-item>
-      <v-sheet color="indigo" height="100%">
+      <v-sheet color="primary" height="100%">
         <v-row class="fill-height" align="center" justify="center">
-          <v-list dense color="indigo" dark>
+          <v-list dense color="primary" dark>
             <div class="text-h1 font-weight-thin">Recursos:</div>
             <v-list-item>
               <v-list-item-icon>
@@ -64,11 +64,11 @@
       </v-sheet>
     </v-carousel-item>
     <v-carousel-item>
-      <v-sheet color="indigo" height="100%" dark>
+      <v-sheet color="card" height="100%" dark>
         <v-row class="fill-height" align="center" justify="center">
           <v-col cols="12" align="center" justify="center">
             <p class="text-h2">Vamos começar?</p>
-            <v-btn color="cyan" link to="/Clientes">Vamos lá!</v-btn>
+            <v-btn color="teal darken-3" link to="/Clientes">Vamos lá!</v-btn>
           </v-col>
         </v-row>
       </v-sheet>

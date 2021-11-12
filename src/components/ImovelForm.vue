@@ -28,6 +28,7 @@
                   <v-text-field
                     label="Descricao"
                     required
+                    hint="ex: Sobrado com 3 quartos e 2 banheiros; varanda espaçosa; ..."
                     :rules="[rules.required]"
                     v-model="imovel.descricao"
                   ></v-text-field>
