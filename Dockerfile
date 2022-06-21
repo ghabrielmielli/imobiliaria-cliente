@@ -3,4 +3,5 @@ WORKDIR /imobiliaria-cliente
 ENV PATH="./node_modules/.bin:$PATH"
 COPY . .
 RUN npm install
+EXPOSE 8080
 CMD ["npm", "run", "serve"]
